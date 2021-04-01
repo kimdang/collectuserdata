@@ -121,3 +121,34 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# LOG_PATH = os.path.join(BASE_DIR, "logs/debug.log")
+
+# if not os.path.join(LOG_PATH):
+#     print(LOG_PATH)
+#     os.mkdir(LOG_PATH)
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'loggers' : {
+        'django': {
+            'handlers': ['file'], 
+            'level': 'DEBUG',
+        },
+    },
+    'handlers': {
+        'file': {
+            'level': 'DEBUG', 
+            'class': 'logging.FileHandler',
+            'filename': './logs/debug.log',
+            'formatter': 'simpleRe',
+        },
+    },
+    'formatters': {
+        'simpleRe': {
+            'format': '{levelname} {message}',
+            'style': '{',
+        }
+    }
+}
