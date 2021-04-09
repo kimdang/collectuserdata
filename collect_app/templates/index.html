@@ -5,27 +5,30 @@
 <head>
     <meta charset="utf-8">
     <title>Index</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 </head>
 
 <body>
-    <div style="display: flex; justify-content: center;">Hello there! Please enter your first name and age.</div>
+    <div style="width: 100%; margin: auto; text-align: center">Your information:</div>
+    <div class="container">
+        <table style="width: auto; margin: auto" class="table">
+            <tbody>
+              <tr>
+                <th scope="row">IP Address</th>
+                <td>{{ip}}</td>
+              </tr>
+              <tr>
+                <th scope="row">Browser</th>
+                <td>{{browser}}</td>
+              </tr>
+              <tr>
+                <th scope="row">OS</th>
+                <td>{{os}}</td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
 
-    <div style="display: flex; justify-content: center;">
-        <div style="position: center; max-width: 500px; max-height: 300px;">
-            <form action=confirmPage method="GET">
-                <div>
-                    {{form.fname}}
-                </div>
-                <div>
-                    {{form.age}}
-                </div>
-                <br>
-                {% csrf_token %}
-    
-                <input class="btn btn-lg btn-primary btn-block" type="Submit" value="Enter">
-    
-            </form>
-        </div>
 
 </body>
 
