@@ -1,13 +1,13 @@
 import boto3
 import credential
-from boto3.dynamodb.conditions import Key
+from boto3.dynamodb.conditions import Key, Attr
 
 dynamodb = boto3.resource('dynamodb', aws_access_key_id=credential.AWS_ACCESS_KEY_ID, aws_secret_access_key=credential.AWS_SECRET_ACCESS_KEY, region_name=credential.AWS_DEFAULT_REGION)
-## table = boto3.client('dynamodb') ## you can use client API or resource API, resource API is higher level 
+## table = boto3.client('dynamodb') ## you can use client API or resource API, resource API is higher level.
 
+table_name = 'test'
 
-def create_table():
-    table_name = "test_collectuserinfo"
+def create_table(table_name):
     existed_tables = [table.name for table in dynamodb.tables.all()]
 
     if table_name not in existed_tables:
@@ -17,33 +17,52 @@ def create_table():
                 'KeyType': 'HASH' ## partition key
             }, 
             {
-                'AttributeName': 'access_time', 
+                'AttributeName': 'timestamp', 
                 'KeyType': 'RANGE' ## sort key
             }
         ], 
         AttributeDefinitions=[
             {
                 'AttributeName': 'IP_address', 
-                'AttributeType': 'N'
+                'AttributeType': 'S'
             }, 
             {
-                'AttributeName': 'access_time', 
+                'AttributeName': 'timestamp', 
                 'AttributeType': 'S'
-            }
-
+            }, 
         ], 
         ProvisionedThroughput={
             'ReadCapacityUnits': 5, 
             'WriteCapacityUnits': 5
         })
-
-        table.meta.client.get_waiter('table_exists').wait(TableName='users')
+        table.wait_until_exists()
+        print(table_name + ' has been created.')
     else:
-        print(table_name + ' already existed in database!')
+        print(table_name + ' already existed in database.')
 
 
+def delete_table(table_name):
+    table = dynamodb.Table(table_name)
+    table.delete()
+    table.wait_until_not_exists()
+    print(table_name + " has been deleted.")
+
+def add_item(table_name):
+    table = dynamodb.Table(table_name)
+    table.put_item(
+        Item={
+            'IP_address': '12.345.67.123',
+            'timestamp': '2012-04-18 03:45:00', 
+            'other': {
+                'os': 'chrome', 
+                'browser': 'safari'
+            }
+        
+    })
+
+def update_item(table_name):
 
 
-def 
+add_item(table_name)
 
-create_table()
+
