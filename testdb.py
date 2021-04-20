@@ -5,7 +5,7 @@ from boto3.dynamodb.conditions import Key, Attr
 dynamodb = boto3.resource('dynamodb', aws_access_key_id=credential.AWS_ACCESS_KEY_ID, aws_secret_access_key=credential.AWS_SECRET_ACCESS_KEY, region_name=credential.AWS_DEFAULT_REGION)
 ## table = boto3.client('dynamodb') ## you can use client API or resource API, resource API is higher level.
 
-table_name = 'test'
+table_name = 'tally'
 
 def create_table(table_name):
     existed_tables = [table.name for table in dynamodb.tables.all()]
@@ -24,12 +24,12 @@ def create_table(table_name):
         AttributeDefinitions=[
             {
                 'AttributeName': 'IP_address', 
-                'AttributeType': 'S'
+                'AttributeType': 'S', 
             }, 
             {
                 'AttributeName': 'timestamp', 
                 'AttributeType': 'S'
-            }, 
+            }
         ], 
         ProvisionedThroughput={
             'ReadCapacityUnits': 5, 
@@ -57,12 +57,8 @@ def add_item(table_name):
                 'os': 'chrome', 
                 'browser': 'safari'
             }
-        
     })
 
-def update_item(table_name):
 
-
-add_item(table_name)
 
 
