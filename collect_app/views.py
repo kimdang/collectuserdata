@@ -4,9 +4,10 @@ from django.shortcuts import render
 
 import logging, json
 from user_agents import parse
+from tallytable import add_entry
 
 
-logger = logging.getLogger(__name__) # get an instance of a logger
+logger = logging.getLogger(__name__) ## get an instance of a logger
 
 
 def getnameage (request):
@@ -24,12 +25,14 @@ def getnameage (request):
     user_dict = {
         "source_IP": ip, 
         "browser": user_agent.browser.family,
-        "os": user_agent.os.family,
-    } 
+        "os": 'Mac' if user_agent.os.family == 'Mac OS X' else 'Windows',
+    }
+    add_entry(user_dict)
 
     user_json = json.dumps(user_dict)
     logger.info(user_json)
 
+    ## info dict is used for display purposes
     info = {
         # "form": form,
         "ip": ip, 

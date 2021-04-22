@@ -1,0 +1,284 @@
+INFO 2021-04-22: Watching for file changes with StatReloader
+ERROR 2021-04-22: Internal Server Error: /
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/kdang/Desktop/collectuserinfo/collect_app/views.py", line 31, in getnameage
+    add_entry(user_dict)
+  File "/Users/kdang/Desktop/collectuserinfo/tallytable.py", line 27, in add_entry
+    ini_tally[user_dict['os']] += 1
+KeyError: 'Mac OS X'
+WARNING 2021-04-22: Not Found: /favicon.ico
+INFO 2021-04-22: /Users/kdang/Desktop/collectuserinfo/collect_app/views.py changed, reloading.
+INFO 2021-04-22: Watching for file changes with StatReloader
+INFO 2021-04-22: /Users/kdang/Desktop/collectuserinfo/collect_app/views.py changed, reloading.
+INFO 2021-04-22: Watching for file changes with StatReloader
+INFO 2021-04-22: Watching for file changes with StatReloader
+ERROR 2021-04-22: Internal Server Error: /
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/kdang/Desktop/collectuserinfo/collect_app/views.py", line 31, in getnameage
+    add_entry(user_dict)
+  File "/Users/kdang/Desktop/collectuserinfo/tallytable.py", line 27, in add_entry
+    ini_tally[user_dict['os']] += 1
+KeyError: 'Mac OS X'
+INFO 2021-04-22: /Users/kdang/Desktop/collectuserinfo/collect_app/views.py changed, reloading.
+INFO 2021-04-22: Watching for file changes with StatReloader
+ERROR 2021-04-22: Internal Server Error: /
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/kdang/Desktop/collectuserinfo/collect_app/views.py", line 31, in getnameage
+    add_entry(user_dict)
+  File "/Users/kdang/Desktop/collectuserinfo/tallytable.py", line 44, in add_entry
+    ReturnValues = 'UPDATED_NEW'
+  File "/usr/local/lib/python3.7/site-packages/boto3/resources/factory.py", line 520, in do_action
+    response = action(self, *args, **kwargs)
+  File "/usr/local/lib/python3.7/site-packages/boto3/resources/action.py", line 83, in __call__
+    response = getattr(parent.meta.client, operation_name)(**params)
+  File "/usr/local/lib/python3.7/site-packages/botocore/client.py", line 357, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+  File "/usr/local/lib/python3.7/site-packages/botocore/client.py", line 661, in _make_api_call
+    raise error_class(parsed_response, operation_name)
+botocore.exceptions.ClientError: An error occurred (ValidationException) when calling the UpdateItem operation: Invalid UpdateExpression: Syntax error; token: "OS", near: "Mac OS ="
+INFO 2021-04-22: /Users/kdang/Desktop/collectuserinfo/collect_app/views.py changed, reloading.
+INFO 2021-04-22: Watching for file changes with StatReloader
+ERROR 2021-04-22: Internal Server Error: /
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/kdang/Desktop/collectuserinfo/collect_app/views.py", line 31, in getnameage
+    add_entry(user_dict)
+  File "/Users/kdang/Desktop/collectuserinfo/tallytable.py", line 44, in add_entry
+    ReturnValues = 'UPDATED_NEW'
+  File "/usr/local/lib/python3.7/site-packages/boto3/resources/factory.py", line 520, in do_action
+    response = action(self, *args, **kwargs)
+  File "/usr/local/lib/python3.7/site-packages/boto3/resources/action.py", line 83, in __call__
+    response = getattr(parent.meta.client, operation_name)(**params)
+  File "/usr/local/lib/python3.7/site-packages/botocore/client.py", line 357, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+  File "/usr/local/lib/python3.7/site-packages/botocore/client.py", line 661, in _make_api_call
+    raise error_class(parsed_response, operation_name)
+botocore.exceptions.ClientError: An error occurred (ValidationException) when calling the UpdateItem operation: Invalid UpdateExpression: Syntax error; token: "OS", near: "Mac OS ="
+INFO 2021-04-22: /Users/kdang/Desktop/collectuserinfo/collect_app/views.py changed, reloading.
+INFO 2021-04-22: Watching for file changes with StatReloader
+ERROR 2021-04-22: Internal Server Error: /
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/kdang/Desktop/collectuserinfo/collect_app/views.py", line 31, in getnameage
+    add_entry(user_dict)
+  File "/Users/kdang/Desktop/collectuserinfo/tallytable.py", line 44, in add_entry
+    ReturnValues = 'UPDATED_NEW'
+  File "/usr/local/lib/python3.7/site-packages/boto3/resources/factory.py", line 520, in do_action
+    response = action(self, *args, **kwargs)
+  File "/usr/local/lib/python3.7/site-packages/boto3/resources/action.py", line 83, in __call__
+    response = getattr(parent.meta.client, operation_name)(**params)
+  File "/usr/local/lib/python3.7/site-packages/botocore/client.py", line 357, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+  File "/usr/local/lib/python3.7/site-packages/botocore/client.py", line 661, in _make_api_call
+    raise error_class(parsed_response, operation_name)
+botocore.exceptions.ClientError: An error occurred (ValidationException) when calling the UpdateItem operation: Invalid UpdateExpression: Syntax error; token: "OS", near: "Mac OS ="
+INFO 2021-04-22: /Users/kdang/Desktop/collectuserinfo/collect_app/views.py changed, reloading.
+INFO 2021-04-22: Watching for file changes with StatReloader
+ERROR 2021-04-22: Internal Server Error: /
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/kdang/Desktop/collectuserinfo/collect_app/views.py", line 31, in getnameage
+    add_entry(user_dict)
+  File "/Users/kdang/Desktop/collectuserinfo/tallytable.py", line 44, in add_entry
+    ReturnValues = 'UPDATED_NEW'
+  File "/usr/local/lib/python3.7/site-packages/boto3/resources/factory.py", line 520, in do_action
+    response = action(self, *args, **kwargs)
+  File "/usr/local/lib/python3.7/site-packages/boto3/resources/action.py", line 83, in __call__
+    response = getattr(parent.meta.client, operation_name)(**params)
+  File "/usr/local/lib/python3.7/site-packages/botocore/client.py", line 357, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+  File "/usr/local/lib/python3.7/site-packages/botocore/client.py", line 661, in _make_api_call
+    raise error_class(parsed_response, operation_name)
+botocore.exceptions.ClientError: An error occurred (ValidationException) when calling the UpdateItem operation: Invalid UpdateExpression: Syntax error; token: "OS", near: "Mac OS ="
+INFO 2021-04-22: /Users/kdang/Desktop/collectuserinfo/collect_app/views.py changed, reloading.
+INFO 2021-04-22: Watching for file changes with StatReloader
+INFO 2021-04-22: Watching for file changes with StatReloader
+ERROR 2021-04-22: Internal Server Error: /
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/kdang/Desktop/collectuserinfo/collect_app/views.py", line 31, in getnameage
+    add_entry(user_dict)
+  File "/Users/kdang/Desktop/collectuserinfo/tallytable.py", line 44, in add_entry
+    ReturnValues = 'UPDATED_NEW'
+  File "/usr/local/lib/python3.7/site-packages/boto3/resources/factory.py", line 520, in do_action
+    response = action(self, *args, **kwargs)
+  File "/usr/local/lib/python3.7/site-packages/boto3/resources/action.py", line 83, in __call__
+    response = getattr(parent.meta.client, operation_name)(**params)
+  File "/usr/local/lib/python3.7/site-packages/botocore/client.py", line 357, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+  File "/usr/local/lib/python3.7/site-packages/botocore/client.py", line 661, in _make_api_call
+    raise error_class(parsed_response, operation_name)
+botocore.exceptions.ClientError: An error occurred (ValidationException) when calling the UpdateItem operation: Invalid UpdateExpression: Syntax error; token: "OS", near: "Mac OS ="
+INFO 2021-04-22: /Users/kdang/Desktop/collectuserinfo/tallytable.py changed, reloading.
+INFO 2021-04-22: Watching for file changes with StatReloader
+ERROR 2021-04-22: Internal Server Error: /
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/kdang/Desktop/collectuserinfo/collect_app/views.py", line 31, in getnameage
+    add_entry(user_dict)
+  File "/Users/kdang/Desktop/collectuserinfo/tallytable.py", line 42, in add_entry
+    ':t': ini_tally['Totalusers']
+  File "/usr/local/lib/python3.7/site-packages/boto3/resources/factory.py", line 520, in do_action
+    response = action(self, *args, **kwargs)
+  File "/usr/local/lib/python3.7/site-packages/boto3/resources/action.py", line 83, in __call__
+    response = getattr(parent.meta.client, operation_name)(**params)
+  File "/usr/local/lib/python3.7/site-packages/botocore/client.py", line 357, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+  File "/usr/local/lib/python3.7/site-packages/botocore/client.py", line 661, in _make_api_call
+    raise error_class(parsed_response, operation_name)
+botocore.exceptions.ClientError: An error occurred (ValidationException) when calling the UpdateItem operation: Invalid UpdateExpression: Syntax error; token: "OS", near: "Mac OS ="
+INFO 2021-04-22: /Users/kdang/Desktop/collectuserinfo/tallytable.py changed, reloading.
+INFO 2021-04-22: Watching for file changes with StatReloader
+ERROR 2021-04-22: Internal Server Error: /
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/kdang/Desktop/collectuserinfo/collect_app/views.py", line 31, in getnameage
+    add_entry(user_dict)
+  File "/Users/kdang/Desktop/collectuserinfo/tallytable.py", line 43, in add_entry
+    ':t': ini_tally['Totalusers']
+  File "/usr/local/lib/python3.7/site-packages/boto3/resources/factory.py", line 520, in do_action
+    response = action(self, *args, **kwargs)
+  File "/usr/local/lib/python3.7/site-packages/boto3/resources/action.py", line 83, in __call__
+    response = getattr(parent.meta.client, operation_name)(**params)
+  File "/usr/local/lib/python3.7/site-packages/botocore/client.py", line 357, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+  File "/usr/local/lib/python3.7/site-packages/botocore/client.py", line 661, in _make_api_call
+    raise error_class(parsed_response, operation_name)
+botocore.exceptions.ClientError: An error occurred (ValidationException) when calling the UpdateItem operation: Invalid UpdateExpression: Syntax error; token: "OS", near: "Mac OS ="
+INFO 2021-04-22: /Users/kdang/Desktop/collectuserinfo/collect_app/views.py changed, reloading.
+INFO 2021-04-22: Watching for file changes with StatReloader
+INFO 2021-04-22: /Users/kdang/Desktop/collectuserinfo/tallytable.py changed, reloading.
+INFO 2021-04-22: Watching for file changes with StatReloader
+ERROR 2021-04-22: Internal Server Error: /
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/kdang/Desktop/collectuserinfo/collect_app/views.py", line 30, in getnameage
+    add_entry(user_dict)
+  File "/Users/kdang/Desktop/collectuserinfo/tallytable.py", line 44, in add_entry
+    ':t': ini_tally['Totalusers']
+  File "/usr/local/lib/python3.7/site-packages/boto3/resources/factory.py", line 520, in do_action
+    response = action(self, *args, **kwargs)
+  File "/usr/local/lib/python3.7/site-packages/boto3/resources/action.py", line 83, in __call__
+    response = getattr(parent.meta.client, operation_name)(**params)
+  File "/usr/local/lib/python3.7/site-packages/botocore/client.py", line 357, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+  File "/usr/local/lib/python3.7/site-packages/botocore/client.py", line 661, in _make_api_call
+    raise error_class(parsed_response, operation_name)
+botocore.exceptions.ClientError: An error occurred (ValidationException) when calling the UpdateItem operation: Invalid UpdateExpression: Syntax error; token: "OS", near: "Mac OS ="
+INFO 2021-04-22: /Users/kdang/Desktop/collectuserinfo/tallytable.py changed, reloading.
+INFO 2021-04-22: Watching for file changes with StatReloader
+INFO 2021-04-22: /Users/kdang/Desktop/collectuserinfo/tallytable.py changed, reloading.
+INFO 2021-04-22: Watching for file changes with StatReloader
+ERROR 2021-04-22: Internal Server Error: /
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/kdang/Desktop/collectuserinfo/collect_app/views.py", line 30, in getnameage
+    add_entry(user_dict)
+  File "/Users/kdang/Desktop/collectuserinfo/tallytable.py", line 45, in add_entry
+    ':t': ini_tally['Totalusers']
+  File "/usr/local/lib/python3.7/site-packages/boto3/resources/factory.py", line 520, in do_action
+    response = action(self, *args, **kwargs)
+  File "/usr/local/lib/python3.7/site-packages/boto3/resources/action.py", line 83, in __call__
+    response = getattr(parent.meta.client, operation_name)(**params)
+  File "/usr/local/lib/python3.7/site-packages/botocore/client.py", line 357, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+  File "/usr/local/lib/python3.7/site-packages/botocore/client.py", line 661, in _make_api_call
+    raise error_class(parsed_response, operation_name)
+botocore.exceptions.ClientError: An error occurred (ValidationException) when calling the UpdateItem operation: Invalid UpdateExpression: Syntax error; token: "OS", near: "Mac OS ="
+INFO 2021-04-22: /Users/kdang/Desktop/collectuserinfo/tallytable.py changed, reloading.
+INFO 2021-04-22: Watching for file changes with StatReloader
+ERROR 2021-04-22: Internal Server Error: /
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/kdang/Desktop/collectuserinfo/collect_app/views.py", line 30, in getnameage
+    add_entry(user_dict)
+  File "/Users/kdang/Desktop/collectuserinfo/tallytable.py", line 47, in add_entry
+    ReturnValues = 'UPDATED_NEW'
+  File "/usr/local/lib/python3.7/site-packages/boto3/resources/factory.py", line 520, in do_action
+    response = action(self, *args, **kwargs)
+  File "/usr/local/lib/python3.7/site-packages/boto3/resources/action.py", line 83, in __call__
+    response = getattr(parent.meta.client, operation_name)(**params)
+  File "/usr/local/lib/python3.7/site-packages/botocore/client.py", line 357, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+  File "/usr/local/lib/python3.7/site-packages/botocore/client.py", line 661, in _make_api_call
+    raise error_class(parsed_response, operation_name)
+botocore.exceptions.ClientError: An error occurred (ValidationException) when calling the UpdateItem operation: Invalid UpdateExpression: Syntax error; token: "OS", near: "Mac OS ="
+INFO 2021-04-22: /Users/kdang/Desktop/collectuserinfo/collect_app/views.py changed, reloading.
+INFO 2021-04-22: Watching for file changes with StatReloader
+INFO 2021-04-22: /Users/kdang/Desktop/collectuserinfo/collect_app/views.py changed, reloading.
+INFO 2021-04-22: Watching for file changes with StatReloader
+INFO 2021-04-22: {"source_IP": "127.0.0.1", "browser": "Chrome", "os": "Mac"}
+INFO 2021-04-22: /Users/kdang/Desktop/collectuserinfo/tallytable.py changed, reloading.
+INFO 2021-04-22: Watching for file changes with StatReloader
+INFO 2021-04-22: {"source_IP": "127.0.0.1", "browser": "Chrome", "os": "Mac"}
+INFO 2021-04-22: /Users/kdang/Desktop/collectuserinfo/tallytable.py changed, reloading.
+INFO 2021-04-22: Watching for file changes with StatReloader
+INFO 2021-04-22: {"source_IP": "127.0.0.1", "browser": "Chrome", "os": "Mac"}
+INFO 2021-04-22: Watching for file changes with StatReloader
+INFO 2021-04-22: Watching for file changes with StatReloader
+INFO 2021-04-22: {"source_IP": "127.0.0.1", "browser": "Chrome", "os": "Mac"}
+INFO 2021-04-22: {"source_IP": "127.0.0.1", "browser": "Chrome", "os": "Mac"}
+INFO 2021-04-22: {"source_IP": "127.0.0.1", "browser": "Chrome", "os": "Mac"}
