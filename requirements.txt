@@ -4,3 +4,5 @@ ua-parser==0.10.0
 user-agents==2.2.0
 json
 boto3
+base64
+matplotlib
