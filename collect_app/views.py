@@ -1,12 +1,13 @@
 from django.shortcuts import render
-
 import logging, json, base64
 from user_agents import parse
 from tallytable import add_entry
-from graph import pie
+import graph
+
 
 
 logger = logging.getLogger(__name__) ## get an instance of a logger
+
 
 
 def getnameage (request):
@@ -24,15 +25,19 @@ def getnameage (request):
 
 
     user_dict = {
-        "source_IP": ip, 
+        "source_IP": ip,
         "browser": user_agent.browser.family,
         "os": 'Mac' if user_agent.os.family == 'Mac OS X' else 'Windows',
     }
     tally = add_entry(user_dict)
 
-    image = pie(tally)
-    chart = base64.b64encode(image)
-    chart = chart.decode('utf-8')
+    image_os = graph.pie_os(tally)
+    chart_os = base64.b64encode(image_os)
+    chart_os = chart_os.decode('utf-8')
+
+    image_browser = graph.pie_browser(tally)
+    chart_browser = base64.b64encode(image_browser)
+    chart_browser = chart_browser.decode('utf-8')
 
 
     ## log user_dict
@@ -43,7 +48,8 @@ def getnameage (request):
 
     ## info is used for display purposes
     info = {
-        "chart": chart,
+        "chart_os": chart_os,
+        "chart_browser": chart_browser,
         "ip": ip, 
         "browser": user_agent.browser.family, 
         "os": user_agent.os.family,

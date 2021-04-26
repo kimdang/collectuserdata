@@ -462,3 +462,195 @@ INFO 2021-04-23: Watching for file changes with StatReloader
 INFO 2021-04-23: /Users/kdang/Desktop/collectuserinfo/graph.py changed, reloading.
 INFO 2021-04-23: Watching for file changes with StatReloader
 INFO 2021-04-23: {"source_IP": "127.0.0.1", "browser": "Chrome", "os": "Mac"}
+INFO 2021-04-26: Watching for file changes with StatReloader
+INFO 2021-04-26: Watching for file changes with StatReloader
+INFO 2021-04-26: {"source_IP": "127.0.0.1", "browser": "Chrome", "os": "Mac"}
+WARNING 2021-04-26: Not Found: /favicon.ico
+INFO 2021-04-26: /Users/kdang/Desktop/collectuserinfo/graph.py changed, reloading.
+INFO 2021-04-26: Watching for file changes with StatReloader
+INFO 2021-04-26: /Users/kdang/Desktop/collectuserinfo/graph.py changed, reloading.
+INFO 2021-04-26: Watching for file changes with StatReloader
+INFO 2021-04-26: Watching for file changes with StatReloader
+INFO 2021-04-26: Watching for file changes with StatReloader
+INFO 2021-04-26: Watching for file changes with StatReloader
+ERROR 2021-04-26: Internal Server Error: /
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/kdang/Desktop/collectuserinfo/collect_app/views.py", line 33, in getnameage
+    image = graph.pie_os(tally)
+  File "/Users/kdang/Desktop/collectuserinfo/graph.py", line 15, in pie_os
+    plt.pie(os_sizes, explode=explode, labels=os_labels, autopct='%1.1f %%', shadow=True, startangle=90)
+NameError: name 'explode' is not defined
+INFO 2021-04-26: /Users/kdang/Desktop/collectuserinfo/graph.py changed, reloading.
+INFO 2021-04-26: Watching for file changes with StatReloader
+INFO 2021-04-26: {"source_IP": "127.0.0.1", "browser": "Chrome", "os": "Mac"}
+INFO 2021-04-26: /Users/kdang/Desktop/collectuserinfo/graph.py changed, reloading.
+INFO 2021-04-26: Watching for file changes with StatReloader
+ERROR 2021-04-26: Internal Server Error: /
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/kdang/Desktop/collectuserinfo/collect_app/views.py", line 33, in getnameage
+    image = graph.pie_os(tally)
+  File "/Users/kdang/Desktop/collectuserinfo/graph.py", line 15, in pie_os
+    plt.pie(os_sizes, labels=os_labels, autopct='%1.1f %%', shadow=True, startangle=90)
+  File "/usr/local/lib/python3.7/site-packages/matplotlib/pyplot.py", line 2781, in pie
+    data is not None else {}))
+  File "/usr/local/lib/python3.7/site-packages/matplotlib/__init__.py", line 1589, in inner
+    return func(ax, *map(sanitize_sequence, args), **kwargs)
+  File "/usr/local/lib/python3.7/site-packages/matplotlib/axes/_axes.py", line 2966, in pie
+    x = np.asarray(x, np.float32)
+  File "/usr/local/lib/python3.7/site-packages/numpy/core/numeric.py", line 538, in asarray
+    return array(a, dtype, copy=False, order=order)
+ValueError: could not convert string to float: 'Other_OS'
+INFO 2021-04-26: /Users/kdang/Desktop/collectuserinfo/graph.py changed, reloading.
+INFO 2021-04-26: Watching for file changes with StatReloader
+INFO 2021-04-26: {"source_IP": "127.0.0.1", "browser": "Chrome", "os": "Mac"}
+INFO 2021-04-26: /Users/kdang/Desktop/collectuserinfo/graph.py changed, reloading.
+INFO 2021-04-26: Watching for file changes with StatReloader
+INFO 2021-04-26: {"source_IP": "127.0.0.1", "browser": "Chrome", "os": "Mac"}
+INFO 2021-04-26: /Users/kdang/Desktop/collectuserinfo/graph.py changed, reloading.
+INFO 2021-04-26: Watching for file changes with StatReloader
+INFO 2021-04-26: /Users/kdang/Desktop/collectuserinfo/graph.py changed, reloading.
+INFO 2021-04-26: Watching for file changes with StatReloader
+INFO 2021-04-26: /Users/kdang/Desktop/collectuserinfo/collect_app/views.py changed, reloading.
+INFO 2021-04-26: Watching for file changes with StatReloader
+ERROR 2021-04-26: Internal Server Error: /
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/kdang/Desktop/collectuserinfo/collect_app/views.py", line 35, in getnameage
+    chart_os = chart.decode('utf-8')
+NameError: name 'chart' is not defined
+INFO 2021-04-26: /Users/kdang/Desktop/collectuserinfo/collect_app/views.py changed, reloading.
+INFO 2021-04-26: Watching for file changes with StatReloader
+INFO 2021-04-26: /Users/kdang/Desktop/collectuserinfo/collect_app/views.py changed, reloading.
+INFO 2021-04-26: Watching for file changes with StatReloader
+INFO 2021-04-26: {"source_IP": "127.0.0.1", "browser": "Chrome", "os": "Mac"}
+ERROR 2021-04-26: Internal Server Error: /
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/kdang/Desktop/collectuserinfo/collect_app/views.py", line 50, in getnameage
+    "chart_os": char_os,
+NameError: name 'char_os' is not defined
+INFO 2021-04-26: {"source_IP": "127.0.0.1", "browser": "Chrome", "os": "Mac"}
+ERROR 2021-04-26: Internal Server Error: /
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/kdang/Desktop/collectuserinfo/collect_app/views.py", line 50, in getnameage
+    "chart_os": char_os,
+NameError: name 'char_os' is not defined
+INFO 2021-04-26: {"source_IP": "127.0.0.1", "browser": "Chrome", "os": "Mac"}
+ERROR 2021-04-26: Internal Server Error: /
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/kdang/Desktop/collectuserinfo/collect_app/views.py", line 50, in getnameage
+    "chart_os": char_os,
+NameError: name 'char_os' is not defined
+INFO 2021-04-26: /Users/kdang/Desktop/collectuserinfo/collect_app/views.py changed, reloading.
+INFO 2021-04-26: Watching for file changes with StatReloader
+INFO 2021-04-26: {"source_IP": "127.0.0.1", "browser": "Chrome", "os": "Mac"}
+INFO 2021-04-26: /Users/kdang/Desktop/collectuserinfo/collect_app/views.py changed, reloading.
+INFO 2021-04-26: Watching for file changes with StatReloader
+INFO 2021-04-26: /Users/kdang/Desktop/collectuserinfo/collect_app/views.py changed, reloading.
+INFO 2021-04-26: Watching for file changes with StatReloader
+INFO 2021-04-26: /Users/kdang/Desktop/collectuserinfo/collect_app/views.py changed, reloading.
+INFO 2021-04-26: Watching for file changes with StatReloader
+INFO 2021-04-26: {"source_IP": "127.0.0.1", "browser": "Chrome", "os": "Mac"}
+INFO 2021-04-26: {"source_IP": "127.0.0.1", "browser": "Chrome", "os": "Mac"}
+INFO 2021-04-26: {"source_IP": "127.0.0.1", "browser": "Chrome", "os": "Mac"}
+INFO 2021-04-26: {"source_IP": "127.0.0.1", "browser": "Chrome", "os": "Mac"}
+INFO 2021-04-26: {"source_IP": "127.0.0.1", "browser": "Chrome", "os": "Mac"}
+INFO 2021-04-26: {"source_IP": "127.0.0.1", "browser": "Chrome", "os": "Mac"}
+INFO 2021-04-26: {"source_IP": "127.0.0.1", "browser": "Chrome", "os": "Mac"}
+INFO 2021-04-26: /Users/kdang/Desktop/collectuserinfo/graph.py changed, reloading.
+INFO 2021-04-26: Watching for file changes with StatReloader
+INFO 2021-04-26: {"source_IP": "127.0.0.1", "browser": "Chrome", "os": "Mac"}
+INFO 2021-04-26: /Users/kdang/Desktop/collectuserinfo/tallytable.py changed, reloading.
+INFO 2021-04-26: Watching for file changes with StatReloader
+INFO 2021-04-26: /Users/kdang/Desktop/collectuserinfo/graph.py changed, reloading.
+INFO 2021-04-26: Watching for file changes with StatReloader
+INFO 2021-04-26: /Users/kdang/Desktop/collectuserinfo/graph.py changed, reloading.
+INFO 2021-04-26: Watching for file changes with StatReloader
+INFO 2021-04-26: /Users/kdang/Desktop/collectuserinfo/graph.py changed, reloading.
+INFO 2021-04-26: Watching for file changes with StatReloader
+ERROR 2021-04-26: Internal Server Error: /
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/kdang/Desktop/collectuserinfo/collect_app/views.py", line 34, in getnameage
+    image_os = graph.pie_os(tally)
+  File "/Users/kdang/Desktop/collectuserinfo/graph.py", line 18, in pie_os
+    plt.pie(os_sizes, labels=os_labels, color=colors, autopct='%1.1f%%', shadow=True, startangle=90)
+TypeError: pie() got an unexpected keyword argument 'color'
+INFO 2021-04-26: /Users/kdang/Desktop/collectuserinfo/graph.py changed, reloading.
+INFO 2021-04-26: Watching for file changes with StatReloader
+ERROR 2021-04-26: Internal Server Error: /
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/kdang/Desktop/collectuserinfo/collect_app/views.py", line 34, in getnameage
+    image_os = graph.pie_os(tally)
+  File "/Users/kdang/Desktop/collectuserinfo/graph.py", line 18, in pie_os
+    plt.pie(os_sizes, labels=os_labels, colors=colors, autopct='%1.1f%%', shadow=True, startangle=90)
+  File "/usr/local/lib/python3.7/site-packages/matplotlib/pyplot.py", line 2781, in pie
+    data is not None else {}))
+  File "/usr/local/lib/python3.7/site-packages/matplotlib/__init__.py", line 1589, in inner
+    return func(ax, *map(sanitize_sequence, args), **kwargs)
+  File "/usr/local/lib/python3.7/site-packages/matplotlib/axes/_axes.py", line 3027, in pie
+    **wedgeprops)
+  File "/usr/local/lib/python3.7/site-packages/matplotlib/patches.py", line 1076, in __init__
+    Patch.__init__(self, **kwargs)
+  File "/usr/local/lib/python3.7/site-packages/matplotlib/patches.py", line 82, in __init__
+    self.set_facecolor(facecolor)
+  File "/usr/local/lib/python3.7/site-packages/matplotlib/patches.py", line 319, in set_facecolor
+    self._set_facecolor(color)
+  File "/usr/local/lib/python3.7/site-packages/matplotlib/patches.py", line 307, in _set_facecolor
+    self._facecolor = colors.to_rgba(color, alpha)
+  File "/usr/local/lib/python3.7/site-packages/matplotlib/colors.py", line 177, in to_rgba
+    rgba = _to_rgba_no_colorcycle(c, alpha)
+  File "/usr/local/lib/python3.7/site-packages/matplotlib/colors.py", line 231, in _to_rgba_no_colorcycle
+    raise ValueError("Invalid RGBA argument: {!r}".format(orig_c))
+ValueError: Invalid RGBA argument: 'mageta'
+INFO 2021-04-26: /Users/kdang/Desktop/collectuserinfo/graph.py changed, reloading.
+INFO 2021-04-26: Watching for file changes with StatReloader
+INFO 2021-04-26: {"source_IP": "127.0.0.1", "browser": "Chrome", "os": "Mac"}
+INFO 2021-04-26: /Users/kdang/Desktop/collectuserinfo/graph.py changed, reloading.
+INFO 2021-04-26: Watching for file changes with StatReloader
+INFO 2021-04-26: {"source_IP": "127.0.0.1", "browser": "Chrome", "os": "Mac"}

@@ -2,7 +2,10 @@ import boto3
 import credential
 from boto3.dynamodb.conditions import Key, Attr
 
+
+
 dynamodb = boto3.resource('dynamodb', aws_access_key_id=credential.AWS_ACCESS_KEY_ID, aws_secret_access_key=credential.AWS_SECRET_ACCESS_KEY, region_name=credential.AWS_DEFAULT_REGION)
+
 
 
 def add_entry (user_dict):
