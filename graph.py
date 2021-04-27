@@ -14,7 +14,7 @@ def pie_os (tally):
     os_sizes = [tally['Windows'], tally['Mac'], tally['Other_OS']]
     colors = ['cyan', 'lightgreen', 'magenta']
 
-    fig = plt.figure(figsize=(7,7))
+    fig = plt.figure(figsize=(5,5))
     plt.pie(os_sizes, labels=os_labels, colors=colors, autopct='%1.1f%%', shadow=True, startangle=90)
 
     buffer = BytesIO()
@@ -32,7 +32,7 @@ def pie_browser (tally):
     browser_sizes = [tally['Chrome'], tally['Safari'], tally['Firefox'], tally['Other_browser']]
     colors = ['gold', 'salmon', 'royalblue', 'peru']
 
-    fig = plt.figure(figsize=(7,7))
+    fig = plt.figure(figsize=(5,5))
     plt.pie(browser_sizes, labels=browser_labels, colors=colors, autopct='%1.1f%%', shadow=True, startangle=90)
 
     buffer = BytesIO()
