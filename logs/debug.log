@@ -690,3 +690,4 @@ INFO 2021-04-27: {"source_IP": "127.0.0.1", "browser": "Chrome", "os": "Mac"}
 INFO 2021-04-27: {"source_IP": "127.0.0.1", "browser": "Chrome", "os": "Mac"}
 INFO 2021-04-27: {"source_IP": "127.0.0.1", "browser": "Chrome", "os": "Mac"}
 INFO 2021-04-27: {"source_IP": "127.0.0.1", "browser": "Chrome", "os": "Mac"}
+INFO 2021-04-28: Watching for file changes with StatReloader
