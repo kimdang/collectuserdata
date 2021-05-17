@@ -4,7 +4,7 @@ from user_agents import parse
 from tallytable import add_entry
 import graph
 
-
+from django.http import HttpResponse
 
 logger = logging.getLogger(__name__) ## get an instance of a logger
 
@@ -67,3 +67,4 @@ def getuserinfo (request):
     }
 
     return render(request, "index.html", info)
+
