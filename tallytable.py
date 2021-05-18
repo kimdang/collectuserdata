@@ -21,10 +21,14 @@ def add_entry (user_dict):
 
     tallytable = response['Item']
 
-    ## increment
-    tallytable[user_dict['browser']] += 1
-    tallytable[user_dict['os']] += 1
-    tallytable['Totalusers'] += 1
+
+    ## check if columns exist and add as necessary
+    for col in [user_dict['browser'], user_dict['os'], 'Totalusers']:
+        if col not in tallytable.keys():
+            tallytable[col] =  1
+        else:
+            tallytable[col] += 1
+
 
     col_browser = user_dict['browser']
     col_os = user_dict['os']
