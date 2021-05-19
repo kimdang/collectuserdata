@@ -1,4 +1,5 @@
 name: Build new image
+on: [push]
 
 jobs:
   build:
