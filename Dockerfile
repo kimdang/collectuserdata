@@ -1,10 +1,10 @@
-from python:3.7-slim
+FROM python:3.7-slim
 
-cp requirements.txt .
+COPY requirements.txt .
 
-run pip3 install -r requirements.txt
+RUN pip3 install -r requirements.txt
 
-copy . .
+COPY . .
 
 ## command to start docker image
-entrypoint ["./run.sh"]
+ENTRYPOINT ["./run.sh"]
