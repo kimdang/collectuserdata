@@ -10,16 +10,20 @@ dynamodb = boto3.resource('dynamodb', aws_access_key_id=os.environ['AWS_ACCESS_K
 
 def add_entry (user_dict):
 
-    table_name = 'tally'
+    try:
+        table_name = 'tally'
 
-    table = dynamodb.Table(table_name)
-    response = table.get_item(
-        Key={
-            'ID': 1 ## this table only has 1 row
-        }
-    )
+        table = dynamodb.Table(table_name)
+        response = table.get_item(
+            Key={
+                'ID': 1 ## this table only has 1 row
+            }
+        )
+        tallytable = response['Item']
 
-    tallytable = response['Item']
+    except:
+        tallytable = {}
+
 
 
     ## check if columns exist and add as necessary
@@ -46,6 +50,8 @@ def add_entry (user_dict):
         }, 
         ReturnValues = 'UPDATED_NEW'
     )
+
+
 
 
     return tallytable

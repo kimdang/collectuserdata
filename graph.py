@@ -6,16 +6,26 @@ matplotlib.use('Agg')
 import matplotlib.pyplot as plt 
 import base64 
 from io import BytesIO
+import random
 
+browsers = ['Mac', 'Windows', 'Other OS'] ## all possible browsers
+os = ['Chrome', 'Safari', 'Firefox', 'Other Browsers'] ## all possible operating systems
 
 
 def pie_os (tally):
-    os_labels = ['Windows', 'Mac', 'Other']
-    os_sizes = [tally['Windows'], tally['Mac'], tally['Other_OS']]
-    colors = ['cyan', 'lightgreen', 'magenta']
+    labels = []
+    sizes = []
+    for item in tally.keys():
+        if item in os:
+            labels.append(item)
+            sizes.append(tally[item])
+
+    colors = ["#"+''.join([random.choice('0123456789ABCDEF') for j in range(6)])
+             for i in range(len(labels))]
+            
 
     fig = plt.figure(figsize=(5,5))
-    plt.pie(os_sizes, labels=os_labels, colors=colors, autopct='%1.1f%%', shadow=True, startangle=90)
+    plt.pie(sizes, labels=labels, colors=colors, autopct='%1.1f%%', shadow=True, startangle=90)
 
     buffer = BytesIO()
     plt.savefig(buffer, format='png')
@@ -28,12 +38,18 @@ def pie_os (tally):
 
 
 def pie_browser (tally):
-    browser_labels = ['Chrome', 'Safari', 'Firefox', 'Other']
-    browser_sizes = [tally['Chrome'], tally['Safari'], tally['Firefox'], tally['Other_browser']]
-    colors = ['gold', 'salmon', 'royalblue', 'peru']
+    labels = []
+    sizes = []
+    for item in tally.keys():
+        if item in browsers:
+            labels.append(item)
+            sizes.append(tally[item])
+
+    colors = ["#"+''.join([random.choice('0123456789ABCDEF') for j in range(6)])
+             for i in range(len(labels))]
 
     fig = plt.figure(figsize=(5,5))
-    plt.pie(browser_sizes, labels=browser_labels, colors=colors, autopct='%1.1f%%', shadow=True, startangle=90)
+    plt.pie(sizes, labels=labels, autopct='%1.1f%%', shadow=True, startangle=90)
 
     buffer = BytesIO()
     plt.savefig(buffer, format='png')
