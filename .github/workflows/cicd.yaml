@@ -9,8 +9,10 @@ jobs:
     - name: Build Img
       run: |
         echo "${{ secrets.MY_DOCKER_LOGIN }}" | docker login -u "alirom93" --password-stdin
-        docker-compose build
-        docker-compose push
+        HASH=$(echo $GITHUB_SHA | cut -c1-7)
+        docker build -t ${REGISTRY}:collectuserinfo-${HASH} . 
+        docker tag ${REGISTRY}:collectuserinfo-${HASH} ${REGISTRY}:collectuserinfo
+
     - name: Notify slack fail
       if: failure()
       uses: rtCamp/action-slack-notify@master
