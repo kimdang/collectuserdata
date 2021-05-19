@@ -10,8 +10,8 @@ jobs:
       run: |
         echo "${{ secrets.MY_DOCKER_LOGIN }}" | docker login -u "alirom93" --password-stdin
         HASH=$(echo $GITHUB_SHA | cut -c1-7)
-        docker build -t ${REGISTRY}:collectuserinfo-${HASH} . 
-        docker tag ${REGISTRY}:collectuserinfo-${HASH} ${REGISTRY}:collectuserinfo
+        docker build -t ${{ secrets.REGISTRY }}:collectuserinfo-${HASH} . 
+        docker tag ${{ secrets.REGISTRY }}:collectuserinfo-${HASH} ${{ secrets.REGISTRY }}:collectuserinfo
 
     - name: Notify slack fail
       if: failure()
