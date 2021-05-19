@@ -23,25 +23,36 @@ def getuserinfo (request):
     user_agent = parse(ua_string)
 
 
-    ## categorize operating system (Mac, Windows, Other)
-    if 'Mac' in user_agent.os.family:
-        operating_system = 'Mac'
-    else:
-        if 'Windows' in user_agent.os.family:
-            operating_system = 'Windows'
+    ## categorize operating system (e.g. Mac, Windows, Linux, Other)
+    os_list = ['Mac', 'Windows', 'Linux']
+    for o in os_list:
+        if o in user_agent.os.family:
+            operating_system = o
         else:
-            operating_system = 'Other'
+            operating_system = 'Other_OS'
+
+
+    ## categorize browsers (e.g. Safari, Chrome, Firefox, Other)
+    browser_list = ['Chrome', 'Safari', 'Firefox']
+    for b in browser_list:
+        if b in user_agent.browser.family:
+            browser = b
+        else:
+            browser = 'Other_Browsers'
+
+
 
     ## create user_dict
     user_dict = {
         "source_IP": ip,
-        "browser": user_agent.browser.family,
+        "browser": browser,
         "os": operating_system, }
 
     ## add to dynamoDB
     tally = add_entry(user_dict)
 
-    ## create operating system and browser pie charts
+
+    ## create pie charts
     image_os = graph.pie_os(tally)
     chart_os = base64.b64encode(image_os)
     chart_os = chart_os.decode('utf-8')
