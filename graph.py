@@ -8,8 +8,8 @@ import base64
 from io import BytesIO
 import random
 
-browsers = ['Mac', 'Windows', 'Other OS'] ## all possible browsers
-os = ['Chrome', 'Safari', 'Firefox', 'Other Browsers'] ## all possible operating systems
+os = ['Mac', 'Windows', 'Other OS'] ## all possible browsers
+browsers = ['Chrome', 'Safari', 'Firefox', 'Other Browsers'] ## all possible operating systems
 
 
 def pie_os (tally):

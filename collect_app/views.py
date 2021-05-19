@@ -24,25 +24,22 @@ def getuserinfo (request):
 
 
     ## categorize operating system (e.g. Mac, Windows, Linux, Other)
-    if 'Mac' in user_agent.os.family:
-        operating_system = 'Mac'
-    elif 'Windows' in user_agent.os.family:
-        operating_system = 'Windows'
-    elif 'Linux' in user_agent.os.family:
-        operating_system = 'Linux'
-    else:
-        operating_system = 'Other OS'
+    os_list = ['Mac', 'Windows', 'Linux']
+    for o in os_list:
+        if o in user_agent.os.family:
+            operating_system = o
+        else:
+            operating_system = 'Other_OS'
 
 
     ## categorize browsers (e.g. Safari, Chrome, Firefox, Other)
-    if 'Chrome' in user_agent.browser.family:
-        browser = 'Chrome'
-    elif 'Safari' in user_agent.browser.family:
-        browser = 'Safari'
-    elif 'Firefox' in user_agent.browser.family:
-        browser = 'Firefox'
-    else:
-        browser = 'Other Browsers'
+    browser_list = ['Chrome', 'Safari', 'Firefox']
+    for b in browser_list:
+        if b in user_agent.browser.family:
+            browser = b
+        else:
+            browser = 'Other_Browsers'
+
 
 
     ## create user_dict
