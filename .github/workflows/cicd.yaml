@@ -15,6 +15,7 @@ jobs:
       run: |
         echo "${{ secrets.MY_DOCKER_LOGIN }}" | docker login -u "alirom93" --password-stdin
         HASH=$(echo $GITHUB_SHA | cut -c1-7)
+        docker pull ${{ secrets.REGISTRY }}:collectuserinfo
         docker build -t ${{ secrets.REGISTRY }}:collectuserinfo-${HASH} .
         docker push ${{ secrets.REGISTRY }}:collectuserinfo-${HASH}
         docker tag ${{ secrets.REGISTRY }}:collectuserinfo-${HASH} ${{ secrets.REGISTRY }}:collectuserinfo
@@ -23,7 +24,7 @@ jobs:
     - name: Substitude env vars
       run: |
         export HASH=$(echo $GITHUB_SHA | cut -c1-7)
-        export REGCRED="{{ env.REGCRED }}"
+        export REGCRED="${{ env.REGCRED }}"
         envsubst < k8s/deployment.yml > k8s/deployment.yml.new
         mv k8s/deployment.yml.new k8s/deployment.yml
 
