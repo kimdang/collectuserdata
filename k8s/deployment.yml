@@ -10,7 +10,7 @@ kind: Deployment
 metadata:
   name: collectuserinfo
   namespace: collectuserinfo
-  label:
+  labels:
     app: collectuserinfo
 spec:
   replicas: 1
