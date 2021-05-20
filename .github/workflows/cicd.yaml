@@ -9,7 +9,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - name: Checkout repo
+      uses: actions/checkout@v2
     - name: Build Img
       run: |
         echo "${{ secrets.MY_DOCKER_LOGIN }}" | docker login -u "alirom93" --password-stdin
@@ -19,34 +20,24 @@ jobs:
         docker tag ${{ secrets.REGISTRY }}:collectuserinfo-${HASH} ${{ secrets.REGISTRY }}:collectuserinfo
         docker push ${{ secrets.REGISTRY }}:collectuserinfo
 
+    - name: Substitude env vars
+      run: |
+        export HASH=$(echo $GITHUB_SHA | cut -c1-7)
+        export REGCRED="{{ env.REGCRED }}"
+        envsubst < k8s/deployment.yml > k8s/deployment.yml.new
+        mv k8s/deployment.yml.new k8s/deployment.yml
+
+    - name: Trigger deploy
+      uses: Consensys/kubernetes-action@master
+      env:
+        KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA }}
+      with:
+        args: apply -f k8s/deployment.yml
+
+
     - name: Notify slack fail
       if: failure()
       uses: rtCamp/action-slack-notify@master
       env:
         SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
         SLACK_MESSAGE: "Docker Build Failed"
-
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: substitude env vars
-        run: |
-          export HASH=$(echo $GITHUB_SHA | cut -c1-7)
-          export REGCRED="{{ env.REGCRED }}"
-          envsubst < k8s/deployment.yml > k8s/deployment.yml.new
-          mv k8s/deployment.yml.new k8s/deployment.yml
-
-      - name: Trigger deploy
-        uses: Consensys/kubernetes-action@master
-        env:
-          KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA }}
-        with:
-          args: apply -f k8s/deployment.yml
-
-      - name: Notify slack fail
-        if: failure()
-        uses: rtCamp/action-slack-notify@master
-        env:
-          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
-          SLACK_MESSAGE: "Failed to deploy to kubernetes"
