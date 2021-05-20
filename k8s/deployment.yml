@@ -50,10 +50,30 @@ metadata:
     app: collectuserinfo
 
 spec:
-  type: NodePort
+  type: ClusterIP
   ports:
     - port: 8080
       targetPort: 8080
       protocol: TCP
   selector:
     app: collectuserinfo
+
+---
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: ingress
+  namespace: collectuserinfo
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    #nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+
+spec:
+  rules:
+  - host: collectuserinfo.stage.lbtran.com
+    http:
+      paths:
+      - path:
+        backend:
+          serviceName: collectuserinfo
+          servicePort: 8080
