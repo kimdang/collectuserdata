@@ -144,7 +144,7 @@ LOGGING = {
             'when': 'D', ## this specifies the interval
             'interval': 1,
             'backupCount': 10, ## how many backup files to keep, 10 days
-            'filename': './logs/collectuserinfo.log', ## starting from the root directory
+            'filename': 'collectuserinfo.log', ## starting from the root directory
             'formatter': 'simpleRe',
         },
         'console': {
