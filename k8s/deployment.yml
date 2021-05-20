@@ -1,0 +1,22 @@
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: collectuserinfo
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: collectuserinfo
+  namespace: collectuserinfo
+spec:
+  replicas: 1
+  template:
+    spec:
+      containers:
+      - name: collectuserinfo
+        image: alirom93/projects:collectuserinfo
+        imagePullPolicy: always
+      imagePullSecrets:
+      - name: regcred
