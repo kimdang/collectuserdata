@@ -25,7 +25,7 @@ spec:
       containers:
       - name: collectuserinfo
         image: alirom93/projects:collectuserinfo-${HASH}
-        imagePullPolicy: always
+        imagePullPolicy: Always
       imagePullSecrets:
       - name: regcred
 
