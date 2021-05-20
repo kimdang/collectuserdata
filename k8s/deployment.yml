@@ -38,3 +38,22 @@ metadata:
   namespace: collectuserinfo
 data:
   .dockerconfigjson: ${REGCRED}
+
+---
+apiVersion: v1
+kind: Service
+
+metadata:
+  name: collectuserinfo
+  namespace: collectuserinfo
+  labels:
+    app: collectuserinfo
+
+spec:
+  type: NodePort
+  ports:
+    - port: 8080
+      targetPort: 8080
+      protocol: TCP
+  selector:
+    app: collectuserinfo
