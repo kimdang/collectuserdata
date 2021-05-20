@@ -121,10 +121,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 SITE_ROOT = os.path.dirname(os.path.realpath(__file__))
+STATIC_URL = '/static/'
 STATICFILES_DIRS = (
-  os.path.join(SITE_ROOT, 'static/'),
+  os.path.join(SITE_ROOT, 'static'),
 )
-#STATIC_URL = '/static/'
 
 # LOG_PATH = os.path.join(BASE_DIR, "logs/debug.log")
 
