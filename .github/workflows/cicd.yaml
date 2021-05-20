@@ -24,9 +24,8 @@ jobs:
     - name: Substitude env vars
       run: |
         export HASH=$(echo $GITHUB_SHA | cut -c1-7)
-        export REGCRED="${{ env.REGCRED }}"
+        export REGCRED="${{ secrets.REGCRED }}"
         envsubst < k8s/deployment.yml > k8s/deployment.yml.new
-        cat k8s/deployment.yml
         mv k8s/deployment.yml.new k8s/deployment.yml
 
     - name: Trigger deploy
