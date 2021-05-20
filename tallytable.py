@@ -2,9 +2,9 @@ import boto3
 from boto3.dynamodb.conditions import Key, Attr
 import os
 
-ACCESS_KEY= os.environ['AWS_ACCESS_KEY_ID'] if os.environ['AWS_ACCESS_KEY_ID'] else None
-SECRET_KEY= os.environ['AWS_SECRET_ACCESS_KEY'] if os.environ['AWS_SECRET_ACCESS_KEY'] else None
-REGION= os.environ['AWS_DEFAULT_REGION'] if os.environ['AWS_DEFAULT_REGION'] else 'us-west-2'
+ACCESS_KEY = os.getenv('AWS_ACCESS_KEY_ID', None)
+SECRET_KEY = os.getenv('AWS_SECRET_ACCESS_KEY', None)
+REGION = os.getenv('AWS_DEFAULT_REGION', 'us-west-2')
 
 dynamodb = boto3.resource('dynamodb', aws_access_key_id=ACCESS_KEY, aws_secret_access_key=SECRET_KEY, region_name=REGION)
 
