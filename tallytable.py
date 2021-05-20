@@ -1,12 +1,13 @@
 import boto3
 from boto3.dynamodb.conditions import Key, Attr
-import os
+import os 
 
 ACCESS_KEY = os.getenv('AWS_ACCESS_KEY_ID', None)
 SECRET_KEY = os.getenv('AWS_SECRET_ACCESS_KEY', None)
 REGION = os.getenv('AWS_DEFAULT_REGION', 'us-west-2')
 
 dynamodb = boto3.resource('dynamodb', aws_access_key_id=ACCESS_KEY, aws_secret_access_key=SECRET_KEY, region_name=REGION)
+
 
 def add_entry (user_dict):
 
@@ -44,10 +45,10 @@ def add_entry (user_dict):
         },
         UpdateExpression= "SET %s = :b, %s = :o, %s = :t" %(col_browser, col_os, col_totusers),
         ExpressionAttributeValues = {
-            ':b': tallytable[user_dict['browser']],
-            ':o': tallytable[user_dict['os']],
+            ':b': tallytable[user_dict['browser']], 
+            ':o': tallytable[user_dict['os']], 
             ':t': tallytable['Totalusers']
-        },
+        }, 
         ReturnValues = 'UPDATED_NEW'
     )
 
@@ -55,3 +56,4 @@ def add_entry (user_dict):
 
 
     return tallytable
+     
