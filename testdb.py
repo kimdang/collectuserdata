@@ -62,3 +62,4 @@ def add_item(table_name):
 
 
 
+delete_table(table_name)

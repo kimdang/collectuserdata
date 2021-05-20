@@ -131,12 +131,7 @@ STATIC_URL = '/static/'
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
-    # 'loggers' : {
-    #     'django': {
-    #         'handlers': ['file', 'console'], 
-    #         'level': 'INFO',
-    #     },
-    # },
+
     'root' : {
         'handlers': ['file', 'console'], 
         'level': 'INFO',
@@ -145,8 +140,11 @@ LOGGING = {
     'handlers': {
         'file': {
             'level': 'INFO', 
-            'class': 'logging.FileHandler',
-            'filename': './logs/debug.log',
+            'class': 'logging.handlers.TimedRotatingFileHandler',
+            'when': 'D', ## this specifies the interval
+            'interval': 1,
+            'backupCount': 10, ## how many backup files to keep, 10 days
+            'filename': './logs/collectuserinfo.log', ## starting from the root directory
             'formatter': 'simpleRe',
         },
         'console': {
@@ -157,7 +155,7 @@ LOGGING = {
     'formatters': {
         'simpleRe': {
             'format': '{levelname} {asctime}: {message}',
-            'datefmt': '%Y-%m-%d',
+            'datefmt': '%Y-%m-%d %H:%M:%S',
             'style': '{',
         }
     }
