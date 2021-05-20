@@ -32,6 +32,7 @@ spec:
 ---
 apiVersion: v1
 kind: Secret
+type: kubernetes.io/dockerconfigjson
 metadata:
   name: regcred
   namespace: collectuserinfo
