@@ -16,7 +16,16 @@ spec:
     spec:
       containers:
       - name: collectuserinfo
-        image: alirom93/projects:collectuserinfo
+        image: alirom93/projects:collectuserinfo-${HASH}
         imagePullPolicy: always
       imagePullSecrets:
       - name: regcred
+
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: regcred
+  namespace: collectuserinfo
+data:
+  .dockerconfigjson: ${REGCRED}
