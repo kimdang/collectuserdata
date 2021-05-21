@@ -8,8 +8,8 @@ import base64
 from io import BytesIO
 import random
 
-os = ['Mac', 'Windows', 'Other OS'] ## all possible browsers
-browsers = ['Chrome', 'Safari', 'Firefox', 'Other Browsers'] ## all possible operating systems
+os = ['Mac', 'Windows', 'Other_OS'] ## all possible browsers
+browsers = ['Chrome', 'Safari', 'Firefox', 'Other_Browsers'] ## all possible operating systems
 
 
 def pie_os (tally):
@@ -25,7 +25,7 @@ def pie_os (tally):
             
 
     fig = plt.figure(figsize=(5,5))
-    plt.pie(sizes, labels=labels, colors=colors, autopct='%1.1f%%', shadow=True, startangle=90)
+    plt.pie(sizes, labels=labels, colors=colors, autopct='%1.1f%%', shadow=True, startangle=90, normalize=True)
 
     buffer = BytesIO()
     plt.savefig(buffer, format='png')
@@ -49,7 +49,7 @@ def pie_browser (tally):
              for i in range(len(labels))]
 
     fig = plt.figure(figsize=(5,5))
-    plt.pie(sizes, labels=labels, autopct='%1.1f%%', shadow=True, startangle=90)
+    plt.pie(sizes, labels=labels, autopct='%1.1f%%', shadow=True, startangle=90, normalize=True)
 
     buffer = BytesIO()
     plt.savefig(buffer, format='png')
