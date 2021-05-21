@@ -28,6 +28,7 @@ def getuserinfo (request):
     for o in os_list:
         if o in user_agent.os.family:
             operating_system = o
+            break
         else:
             operating_system = 'Other_OS'
 
@@ -37,6 +38,7 @@ def getuserinfo (request):
     for b in browser_list:
         if b in user_agent.browser.family:
             browser = b
+            break
         else:
             browser = 'Other_Browsers'
 
