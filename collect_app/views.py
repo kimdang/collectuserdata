@@ -13,7 +13,7 @@ logger = logging.getLogger(__name__) ## get an instance of a logger
 def getuserinfo (request):
 
     ## user_agent
-    x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
+    x_forwarded_for = request.META.get('HTTP_X_ORIGINAL_FORWARDED_FOR')
     logger.info(request.META)
     if x_forwarded_for:
         ip = x_forwarded_for.split(',')[0]
