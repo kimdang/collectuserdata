@@ -12,8 +12,9 @@ logger = logging.getLogger(__name__) ## get an instance of a logger
 
 def getuserinfo (request):
 
-    ## user_agent 
+    ## user_agent
     x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
+    print(request.META)
     if x_forwarded_for:
         ip = x_forwarded_for.split(',')[0]
     else:
@@ -64,7 +65,7 @@ def getuserinfo (request):
     chart_browser = chart_browser.decode('utf-8')
 
 
-    ## log user_dict 
+    ## log user_dict
     user_json = json.dumps(user_dict)
     logger.info(user_json)
 
@@ -74,10 +75,9 @@ def getuserinfo (request):
     info = {
         "chart_os": chart_os,
         "chart_browser": chart_browser,
-        "ip": ip, 
-        "browser": user_agent.browser.family, 
+        "ip": ip,
+        "browser": user_agent.browser.family,
         "os": user_agent.os.family,
     }
 
     return render(request, "index.html", info)
-
