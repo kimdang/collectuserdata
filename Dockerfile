@@ -4,5 +4,7 @@ copy . .
 ## copy all the code from current folder to Docker image
 run pip3 install -r requirements.txt 
 ## install required libraries
+run mkdir logs
+
 entrypoint ["python3", "manage.py", "runserver", "0.0.0.0:8080"] 
 ## command to start docker image
