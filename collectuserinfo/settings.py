@@ -25,7 +25,7 @@ SECRET_KEY = 'ltrdk)j_82e77q6z8tqt&y#7yh!ewya@u=c^&!4@xuiq4r#uk$'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -120,7 +120,12 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
 
 # LOG_PATH = os.path.join(BASE_DIR, "logs/debug.log")
 
@@ -144,7 +149,7 @@ LOGGING = {
             'when': 'D', ## this specifies the interval
             'interval': 1,
             'backupCount': 10, ## how many backup files to keep, 10 days
-            'filename': './logs/collectuserinfo.log', ## starting from the root directory
+            'filename': 'collectuserinfo.log', ## starting from the root directory
             'formatter': 'simpleRe',
         },
         'console': {

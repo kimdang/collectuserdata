@@ -3,4 +3,5 @@ pyyaml==3.13
 ua-parser==0.10.0
 user-agents==2.2.0
 boto3
+gunicorn
 matplotlib==3.3.4
