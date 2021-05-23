@@ -120,12 +120,13 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
-)
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'collect_app/static'),
+    '/static/'
+]
 
 # LOG_PATH = os.path.join(BASE_DIR, "logs/debug.log")
 
@@ -138,13 +139,13 @@ LOGGING = {
     'disable_existing_loggers': False,
 
     'root' : {
-        'handlers': ['file', 'console'], 
+        'handlers': ['file', 'console'],
         'level': 'INFO',
     },
 
     'handlers': {
         'file': {
-            'level': 'INFO', 
+            'level': 'INFO',
             'class': 'logging.handlers.TimedRotatingFileHandler',
             'when': 'D', ## this specifies the interval
             'interval': 1,
@@ -153,7 +154,7 @@ LOGGING = {
             'formatter': 'simpleRe',
         },
         'console': {
-            'level': 'INFO', 
+            'level': 'INFO',
             'class': 'logging.StreamHandler',
         },
     },
