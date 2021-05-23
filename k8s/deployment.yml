@@ -70,7 +70,7 @@ metadata:
 
 spec:
   rules:
-  - host: collectuserinfo.stage.lbtran.com
+  - host: collectuserinfo.nkdang.com
     http:
       paths:
       - path:
