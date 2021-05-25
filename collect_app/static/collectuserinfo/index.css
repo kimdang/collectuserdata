@@ -6,4 +6,9 @@
     padding: 1em;
     margin: auto;
     width: auto;
+    flex-wrap: wrap;
+}
+
+.img_child {
+    align-self: center;
 }
