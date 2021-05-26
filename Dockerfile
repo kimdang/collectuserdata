@@ -5,6 +5,7 @@ copy . .
 run pip3 install -r requirements.txt 
 ## install required libraries
 run mkdir logs
+run mkdir static
 
-entrypoint ["python3", "manage.py", "runserver", "0.0.0.0:8080"] 
 ## command to start docker image
+ENTRYPOINT ["./run.sh"]
