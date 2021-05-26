@@ -1,8 +1,8 @@
 from django.shortcuts import render
 import logging, json, base64
 from user_agents import parse
-from tallytable import add_entry
-import graph
+from utils.tallytable import add_entry
+from utils import graph
 
 from django.http import HttpResponse
 
