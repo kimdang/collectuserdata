@@ -139,29 +139,42 @@ STATICFILES_DIRS = (
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
+
+
+def filter_for_user(record):
+    ## the argument 'record' is LogRecord type 
+    if 'source_IP' in record.msg and record.levelname == 'INFO':
+        return True
+    return False
+    
+
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
+    'filters': {
+        'filter_for_user': {
+            '()': 'django.utils.log.CallbackFilter', 
+            'callback': filter_for_user,
+        }
+    },
 
     'root' : {
-        'handlers': ['file', 'console'], 
+        'handlers': ['file',], 
         'level': 'INFO',
     },
 
     'handlers': {
         'file': {
             'level': 'INFO', 
+            'filters': ['filter_for_user'], ## add filters here
             'class': 'logging.handlers.TimedRotatingFileHandler',
             'when': 'D', ## this specifies the interval
             'interval': 1,
-            'backupCount': 10, ## how many backup files to keep, 10 days
+            'backupCount': 7, ## how many backup files to keep, 10 days
             'filename': './logs/collectuserinfo.log', ## starting from the root directory
             'formatter': 'simpleRe',
         },
-        'console': {
-            'level': 'INFO', 
-            'class': 'logging.StreamHandler',
-        },
+
     },
     'formatters': {
         'simpleRe': {

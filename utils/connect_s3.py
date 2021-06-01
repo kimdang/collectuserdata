@@ -1,8 +1,7 @@
 import os
 import boto3
-import logging
 
-target_dir = "./logs/"
+target_dir = "../logs/"
 
 def sync_to_s3(target_dir=target_dir, aws_region=os.environ['AWS_DEFAULT_REGION'], bucket_name=os.environ['BUCKET_NAME']):
     if not os.path.isdir(target_dir):
@@ -17,6 +16,5 @@ def sync_to_s3(target_dir=target_dir, aws_region=os.environ['AWS_DEFAULT_REGION'
 
     for filename in os.listdir(target_dir):
         s3.Object(bucket_name, filename).put(Body=open(os.path.join(target_dir, filename), 'rb'))
-        print(filename + " has been uploaded to s3 bucket.")
 
 sync_to_s3(target_dir)
