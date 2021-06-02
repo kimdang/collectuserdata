@@ -1,7 +1,10 @@
 import os
 import boto3
 
-target_dir = "../logs/"
+
+BASE_DIR = BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+target_dir = BASE_DIR + "/logs/"
+
 
 def sync_to_s3(target_dir=target_dir, aws_region=os.environ['AWS_DEFAULT_REGION'], bucket_name=os.environ['BUCKET_NAME']):
     if not os.path.isdir(target_dir):

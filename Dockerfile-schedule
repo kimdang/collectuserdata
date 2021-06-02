@@ -1,0 +1,7 @@
+from python:3.7-slim
+
+copy . .
+
+run pip3 install -r requirements.txt 
+
+ENTRYPOINT ["python3", "utils/schedule_s3.py"]
