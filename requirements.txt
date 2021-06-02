@@ -4,5 +4,6 @@ ua-parser==0.10.0
 user-agents==2.2.0
 boto3
 matplotlib==3.3.4
+apscheduler==3.7.0
 whitenoise==5.2.0
 gunicorn
