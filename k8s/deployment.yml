@@ -26,6 +26,21 @@ spec:
       - name: collectuserinfo
         image: alirom93/projects:collectuserinfo-${HASH}
         imagePullPolicy: Always
+        volumeMounts:
+          - name: shared-data
+            mountPath: /logs
+
+      - name: collectuserinfo
+        image: alirom93/projects:collectuserinfo-sync-s3-${HASH}
+        imagePullPolicy: Always
+        volumeMounts:
+          - name: shared-data
+            mountPath: /logs
+
+      volumes:
+        - name: shared-data
+          emptyDir: {}
+
       imagePullSecrets:
       - name: regcred
 
