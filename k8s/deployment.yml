@@ -30,7 +30,7 @@ spec:
           - name: shared-data
             mountPath: /logs
 
-      - name: collectuserinfo
+      - name: collectuserinfo-sync-s3
         image: alirom93/projects:collectuserinfo-sync-s3-${HASH}
         imagePullPolicy: Always
         volumeMounts:
