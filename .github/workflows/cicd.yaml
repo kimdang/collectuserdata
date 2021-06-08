@@ -11,15 +11,27 @@ jobs:
     steps:
     - name: Checkout repo
       uses: actions/checkout@v2
-    - name: Build Img
+    - name: Build Django Img
       run: |
         echo "${{ secrets.MY_DOCKER_LOGIN }}" | docker login -u "alirom93" --password-stdin
         HASH=$(echo $GITHUB_SHA | cut -c1-7)
-        docker pull ${{ secrets.REGISTRY }}:collectuserinfo
+        docker pull ${{ secrets.REGISTRY }}:collectuserinfo || true
         docker build -t ${{ secrets.REGISTRY }}:collectuserinfo-${HASH} .
         docker push ${{ secrets.REGISTRY }}:collectuserinfo-${HASH}
         docker tag ${{ secrets.REGISTRY }}:collectuserinfo-${HASH} ${{ secrets.REGISTRY }}:collectuserinfo
         docker push ${{ secrets.REGISTRY }}:collectuserinfo
+
+
+    - name: Build Scheduled Img
+      run: |
+        echo "${{ secrets.MY_DOCKER_LOGIN }}" | docker login -u "alirom93" --password-stdin
+        HASH=$(echo $GITHUB_SHA | cut -c1-7)
+        docker pull ${{ secrets.REGISTRY }}:collectuserinfo-sync-s3 || true
+        docker build -t ${{ secrets.REGISTRY }}:collectuserinfo-sync-s3-${HASH} -f Dockerfile-schedule .
+        docker push ${{ secrets.REGISTRY }}:collectuserinfo-sync-s3-${HASH}
+        docker tag ${{ secrets.REGISTRY }}:collectuserinfo-sync-s3-${HASH} ${{ secrets.REGISTRY }}:collectuserinfo-sync-s3
+        docker push ${{ secrets.REGISTRY }}:collectuserinfo-sync-s3
+
 
     - name: Substitude env vars
       run: |
@@ -27,6 +39,7 @@ jobs:
         export REGCRED="${{ secrets.REGCRED }}"
         envsubst < k8s/deployment.yml > k8s/deployment.yml.new
         mv k8s/deployment.yml.new k8s/deployment.yml
+
 
     - name: Trigger deploy
       uses: Consensys/kubernetes-action@master
