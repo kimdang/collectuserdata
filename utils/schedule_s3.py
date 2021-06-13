@@ -1,7 +1,11 @@
 from apscheduler.schedulers.blocking import BlockingScheduler
 from connect_s3 import sync_to_s3
+import datetime
 
-print("Starting scheduled program")
+now = datetime.datetime.now()
+
 scheduler = BlockingScheduler()
-scheduler.add_job(sync_to_s3, 'interval', days=1)
+## call function sync_to_s3 everyday at 21:30, environment's default timezone
+scheduler.add_job(sync_to_s3, trigger='cron', hour='21', minute='30')
+print(f"Schedule program starts at {now}.")
 scheduler.start()
