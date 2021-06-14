@@ -28,7 +28,8 @@ def pie_os (tally):
     plt.pie(sizes, labels=labels, colors=colors, autopct='%1.1f%%', shadow=True, startangle=90, normalize=True)
 
     buffer = BytesIO()
-    plt.savefig(buffer, format='png')
+    ## bbox_inches='tight' extend or shrink area of saved figure to include all contents
+    plt.savefig(buffer, format='png', bbox_inches='tight')
     buffer.seek(0)
     image_png = buffer.getvalue()
     buffer.close()
@@ -52,7 +53,7 @@ def pie_browser (tally):
     plt.pie(sizes, labels=labels, autopct='%1.1f%%', shadow=True, startangle=90, normalize=True)
 
     buffer = BytesIO()
-    plt.savefig(buffer, format='png')
+    plt.savefig(buffer, format='png', bbox_inches='tight')
     buffer.seek(0)
     image_png = buffer.getvalue()
     buffer.close()
