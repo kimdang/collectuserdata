@@ -1,6 +1,6 @@
 import boto3 
 import os 
-
+import sys
 
 class Queue:
     def __init__(self, REGION, ACCESS_KEY, SECRET_KEY, QueueName):
@@ -12,7 +12,7 @@ class Queue:
         try:
             queue = self.sqs.get_queue_by_name(QueueName=self.queue_name)
         except KeyError: 
-            print(f"{self.queue_name} cannot be found.")
+            sys.stdout.write(f'{self.queue_name} cannot be found. \n')
 
         ## filename and bucketname are added to queue
         response = queue.send_message(MessageBody='test', MessageAttributes={
@@ -25,7 +25,7 @@ class Queue:
                 'StringValue': bucketname,
             },
         })
-        print(f"{filename} has been added to queue.")
+        sys.stdout.write(f'{filename} has been added to queue. \n')
 
         
 
