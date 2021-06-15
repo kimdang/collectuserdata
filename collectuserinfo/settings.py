@@ -168,9 +168,8 @@ LOGGING = {
             'level': 'INFO', 
             'filters': ['filter_for_user'], ## add filters here
             'class': 'logging.handlers.TimedRotatingFileHandler',
-            'when': 'D', ## this specifies the interval
-            'interval': 1,
-            'backupCount': 7, ## how many backup files to keep, 10 days
+            'when': 'midnight',
+            'backupCount': 7, ## how many backup files to keep
             'filename': './logs/collectuserinfo.log', ## starting from the root directory
             'formatter': 'simpleRe',
         },
