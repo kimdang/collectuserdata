@@ -12,32 +12,36 @@
 <body>
   <br>
   <br>
-    <div style="width: 100%; margin: auto; text-align: center">Your information:</div>
+
+  <div style="width: 100%; margin: auto; text-align: center">Your information:</div>
+
     <div class="container">
-        <table style="width: auto; margin: auto" class="table">
-            <tbody>
-              <tr>
-                <th scope="row">IP Address</th>
-                <td>{{ip}}</td>
-              </tr>
-              <tr>
-                <th scope="row">Browser</th>
-                <td>{{browser}}</td>
-              </tr>
-              <tr>
-                <th scope="row">OS</th>
-                <td>{{os}}</td>
-              </tr>
-            </tbody>
-          </table>
-
-
-          </div>
+      <table style="width: auto; margin: auto" class="table">
+        <tbody>
+          <tr>
+            <th scope="row">IP Address</th>
+            <td>{{ip}}</td>
+          </tr>
+          <tr>
+            <th scope="row">Browser</th>
+            <td>{{browser}}</td>
+          </tr>
+          <tr>
+            <th scope="row">OS</th>
+            <td>{{os}}</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
+
     <br>
+
+    
     <div class="img_container">
       <img class="img_child" src="data:image/png;base64,{{chart_os|safe}}">
       <img class="img_child" src="data:image/png;base64,{{chart_browser|safe}}"> 
+    </div>
+  </div>
 
 
 </body>

@@ -1,4 +1,4 @@
-import os
+import os, sys
 import boto3
 import botocore
 from SQSQueue import Queue
@@ -38,15 +38,15 @@ def sync_to_s3(target_dir=target_dir, aws_region=REGION, bucket_name=BUCKETNAME,
     for filename in os.listdir(target_dir):
         try:
             s3.Object(bucket_name=bucket_name, key=filename).load()
-            print(f"{filename} already exists in s3 bucket.")
+            sys.stdout.write(f'{filename} already exists in s3 bucket. \n')
         except botocore.exceptions.ClientError as e:
             if e.response['Error']['Code'] == "404":
                 s3.Object(bucket_name=bucket_name, key=filename).put(Body=open(os.path.join(target_dir, filename), 'rb'))
                 ## send filename and bucketname to queue
                 queue.send_message(filename, bucket_name)
-                print(f"{filename} is uploaded to s3 bucket.")
+                sys.stdout.write(f'{filename} is uploaded to s3 bucket. \n')
             else:
-                print(f"{filename} cannot be uploaded to s3 bucket.")
+                sys.stdout.write(f'{filename} cannot be uploaded to s3 bucket. \n')
 
 
 if __name__ == "__main__":
