@@ -4,4 +4,4 @@ copy . .
 
 run pip3 install -r requirements.txt 
 
-ENTRYPOINT ["python3", "utils/schedule_s3.py"]
+ENTRYPOINT ["python3", "-u", "utils/schedule_s3.py"]

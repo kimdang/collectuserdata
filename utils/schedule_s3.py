@@ -6,7 +6,7 @@ import sys
 now = datetime.datetime.now()
 
 scheduler = BlockingScheduler()
-## call function sync_to_s3 everyday at 21:30, environment's default timezone
-scheduler.add_job(sync_to_s3, trigger='cron', hour='21', minute='30')
+## call function sync_to_s3 everyday at 1:30, environment's default timezone
+scheduler.add_job(sync_to_s3, trigger='cron', hour='1', minute='30')
 sys.stdout.write(f'Schedule program starts at {now}. \n')
 scheduler.start()
