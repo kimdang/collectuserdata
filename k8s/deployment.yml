@@ -27,7 +27,7 @@ spec:
         image: alirom93/projects:collectuserinfo-${HASH}
         imagePullPolicy: Always
         volumeMounts:
-          - name: shared-data
+          - name: log-volume
             mountPath: /logs
 
       - name: collectuserinfo-sync-s3
@@ -41,13 +41,13 @@ spec:
           - name: "QUEUE_NAME"
             value: "lb-collectuserinfo"
         volumeMounts:
-          - name: shared-data
+          - name: log-volume
             mountPath: /logs
 
       volumes:
-        - name: shared-data
-          emptyDir: {}
-
+        - name: log-volume
+          persistentVolumeClaim:
+            claimName: log-volume
       imagePullSecrets:
       - name: regcred
 
@@ -99,3 +99,16 @@ spec:
         backend:
           serviceName: collectuserinfo
           servicePort: 8080
+
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: log-volume
+  namespace: collectuserinfo
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 100Mi
