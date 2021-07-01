@@ -9,7 +9,7 @@ QueueName = os.getenv('QUEUE_NAME', None)
 
 def get_queue(region_name, aws_access_key_id, aws_secret_access_key, QueueName):
     queue = Queue(region_name, aws_access_key_id, aws_secret_access_key, QueueName)
-    queue.receive_message()
+    queue.send_message('thisisname', 'thisispath')
     return
 
 

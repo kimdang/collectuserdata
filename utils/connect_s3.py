@@ -1,8 +1,6 @@
-import os, sys
-import boto3
-import botocore
+import os, sys, datetime
+import boto3, botocore
 from SQSQueue import Queue
-import datetime
 
 
 BASE_DIR = BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -17,7 +15,7 @@ QueueName = os.getenv('QUEUE_NAME', None)
 
 
 
-def sync_to_s3(target_dir=target_dir, region_name=region_name, BucketName=BucketName, aws_access_key_id=aws_access_key_id, QueueName=QueueName, aws_secret_access_key=aws_secret_access_key):
+def sync_to_s3(target_dir=target_dir, resgion_name=region_name, BucketName=BucketName, aws_access_key_id=aws_access_key_id, QueueName=QueueName, aws_secret_access_key=aws_secret_access_key):
     now = datetime.datetime.now()
     print(f"Begin syncing to s3 bucket {now}.")
 
@@ -53,12 +51,16 @@ def sync_to_s3(target_dir=target_dir, region_name=region_name, BucketName=Bucket
 
 
 
-def pull_from_s3(info, region_name=region_name):
+def get_from_s3(info, region_name=region_name):
     s3 = boto3.resource('s3', region_name=info.region_name)
     try:
         s3.Object(bucket_name=info.BucketName, key=info.filename).load()
+        
     except KeyError:
-        sys.stdout.write(f'No file {filename} in s3!')
+        sys.stdout.write(f'{info.filename} does not exist in bucket {info.Bucketname}.')
+
+
+
 
 if __name__ == "__main__":
     sync_to_s3()
